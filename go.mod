@@ -164,7 +164,6 @@ replace (
 	k8s.io/csi-translation-lib => k8s.io/csi-translation-lib v0.31.13
 	k8s.io/dynamic-resource-allocation => k8s.io/dynamic-resource-allocation v0.31.13
 	k8s.io/kube-aggregator => k8s.io/kube-aggregator v0.31.13
-	k8s.io/legacy-cloud-providers => k8s.io/legacy-cloud-providers v0.30.14
 	k8s.io/mount-utils => k8s.io/mount-utils v0.31.13
 	k8s.io/pod-security-admission => k8s.io/pod-security-admission v0.31.13
 )
