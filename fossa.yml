@@ -1,0 +1,33 @@
+# FOSSA configuration to override false positive license detections
+# in dependencies flagged during Kubernetes 1.31 upgrade
+
+version: 3
+
+project:
+  name: kubestellar
+  team: kubestellar
+  policy: kubestellar-policy
+
+# Override incorrect license detections
+overrides:
+  - name: github.com/opencontainers/go-digest
+    version: v1.0.0
+    license: Apache-2.0
+    # Scanner incorrectly flags CC-BY-SA-4.0 from docs; code is Apache-2.0
+    
+  - name: github.com/opencontainers/runc  
+    version: v1.1.13
+    license: Apache-2.0
+    # Scanner flags LGPL-2.1; actual code license is Apache-2.0
+    
+  - name: golang.org/x/crypto
+    license: BSD-3-Clause
+    # Scanner shows "OpenSSL-ssleay" artifact; actual license is BSD-3-Clause
+
+# Exclude documentation-only files that trigger license false positives
+exclude:
+  - "**/*.md"
+  - "**/LICENSE.docs"
+  - "**/CONTRIBUTING*"
+  - "**/docs/**"
+  - "**/examples/**"
